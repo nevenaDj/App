@@ -1,0 +1,10 @@
+Napisati SpringBoot konzolnu aplikaciju koja omoguæuje administraciju studenata, predmeta i studentovih položenih ispita.
+Implementirati slojevitu arhitekturu (Prezentacioni sloj, sloj za poslovnu logiku, sloj za upravljanje podacima). Obezbediti da sloj za upravljanje podacima podatke perzistira u fajlovima (JSON).
+
+Model podataka treba da sadrži studenta, predmet i ispit. Veza izmeðu ispita i studenta, kao i ispita i predmeta je jednosmerna (ispit ima informaciju na kojeg se studenta i predmet odnosi). 
+
+Za svaki entitet, napraviti poseban repozitorijum (za upravljanje podacima i uèitavanje/snimanje u fajl), servis (za poslovnu logiku) i view klasu za interakciju sa korisnikom (prezentacioni sloj). 
+
+Napraviti jednu glavnu klasu za interakciju sa korisnikom u kojoj se iz menija bira da li se radi sa studentima, predmetima ili ispitima. U zavisnosti od izabrane opcije, interakciju preuzima odgovarajuæa view klasa.
+
+Svaka klasa koja predstavlja sloj je Spring Bean, tako da se slojevi meðusobno referenciraju koristeæi Spring injekciju zavisnosti.
