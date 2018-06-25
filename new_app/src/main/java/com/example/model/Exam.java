@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Exam {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@ManyToOne
 	private Student student;

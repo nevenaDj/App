@@ -41,7 +41,7 @@ public class ExamRepository {
 	public void saveExams() {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			mapper.writeValue(new File("D:\\workspace\\new_app\\src\\main\\resources\\json\\exams.json"), exams);
+			mapper.writeValue(new File("src\\main\\resources\\json\\exams.json"), exams);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {

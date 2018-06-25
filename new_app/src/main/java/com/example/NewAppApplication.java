@@ -1,19 +1,17 @@
 package com.example;
 
-import java.util.Scanner;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.example.controller.ExamController;
-import com.example.controller.StudentController;
-import com.example.controller.SubjectController;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class NewAppApplication implements CommandLineRunner {
-
+public class NewAppApplication { //implements CommandLineRunner {
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
+/*
 	@Autowired
 	private StudentController studentController;
 
@@ -22,11 +20,11 @@ public class NewAppApplication implements CommandLineRunner {
 
 	@Autowired
 	private ExamController examController;
-
+*/
 	public static void main(String[] args) {
 		SpringApplication.run(NewAppApplication.class, args);
 	}
-
+/*
 	@Override
 	public void run(String... params) throws Exception {
 		studentController.readStudents();
@@ -177,5 +175,5 @@ public class NewAppApplication implements CommandLineRunner {
 		System.out.println("3 - Ispiti");
 		System.out.println("0 - Kraj");
 
-	}
+	}*/
 }

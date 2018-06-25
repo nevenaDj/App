@@ -41,7 +41,7 @@ public class SubjectRepository {
 	public void saveSubjects() {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			mapper.writeValue(new File("D:\\workspace\\new_app\\src\\main\\resources\\json\\subjects.json"), subjects);
+			mapper.writeValue(new File("src\\main\\resources\\json\\subjects.json"), subjects);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
