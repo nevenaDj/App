@@ -1,0 +1,17 @@
+Koristeæi Spring Data JPA u repozitorijumu za preuzimanje podataka o studentima iz baze podataka realizovati sledeæe metode:
+Preuzimanje svih studenata zajedno sa ispitima koje je student položio. Preuzimaju se i studenti koji nisu položili ni jedan predmet
+Preuzimanje proseène ocene za studenta sa zadatim id-om
+Preuzimanje predmeta sortiranih prema broju studenata koji su položili taj predmet
+
+Proširiti model podataka sledeæim entitetima:
+	-Departman - Predmeti pripadaju svom departmanu.
+	-Nastavnik - Pripada departmanu i može da predaje samo na predmetima sa svog departmana, odnosno održava ispite.
+	-Ispitni rok - Sadrži datume za svaki ispit. Nastavnik ne može da upiše ocenu ukoliko ispit nije prijavljen.
+	-Prijava ispita - Evidentira studenta koji može da polaže ispit u ispitnom roku. Student može da odjavi ispit. Prijava ne sme da se briše iz evidencije.
+
+Upisivati greške/izuzetke u eksterni log.txt fajl.
+
+Proširiti primer sa REST API-jem za evidenciju studenata novim REST servisom koji omoguæuje registrovanje novog korisnika. Za novog korisnika mora biti definisano koja prava pristupa ima. 
+Implementirati JWT-baziranu kontrolu pristupa. Kurseve treba da može da dodaje, menja i briše samo administrator, dok su ostale funkcionalnosti dostupne obiènom korisniku. Neautorizovani korisnik ima pravo samo da se uloguje.
+
+Testirati funkcionalnost korišæenjem Postman alata.
