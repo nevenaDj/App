@@ -1,15 +1,17 @@
-KoristeÊi Spring Data JPA u repozitorijumu za preuzimanje podataka o studentima iz baze podataka realizovati sledeÊe metode:
-Preuzimanje svih studenata zajedno sa ispitima koje je student poloûio. Preuzimaju se i studenti koji nisu poloûili ni jedan predmet
-Preuzimanje proseËne ocene za studenta sa zadatim id-om
-Preuzimanje predmeta sortiranih prema broju studenata koji su poloûili taj predmet
+Koriste√¶i Spring Data JPA u repozitorijumu za preuzimanje podataka o studentima iz baze podataka realizovati slede√¶e metode:
+Preuzimanje svih studenata zajedno sa ispitima koje je student polo≈æio. Preuzimaju se i studenti koji nisu polo≈æili ni jedan predmet
+Preuzimanje prose√®ne ocene za studenta sa zadatim id-om
+Preuzimanje predmeta sortiranih prema broju studenata koji su polo≈æili taj predmet
 
-Proöiriti model podataka sledeÊim entitetima:
+Pro≈°iriti model podataka slede√¶im entitetima:
 	-Departman - Predmeti pripadaju svom departmanu.
-	-Nastavnik - Pripada departmanu i moûe da predaje samo na predmetima sa svog departmana, odnosno odrûava ispite.
-	-Ispitni rok - Sadrûi datume za svaki ispit. Nastavnik ne moûe da upiöe ocenu ukoliko ispit nije prijavljen.
-	-Prijava ispita - Evidentira studenta koji moûe da polaûe ispit u ispitnom roku. Student moûe da odjavi ispit. Prijava ne sme da se briöe iz evidencije.
+	-Nastavnik - Pripada departmanu i mo≈æe da predaje samo na predmetima sa svog departmana, odnosno odr≈æava ispite.
+	-Ispitni rok - Sadr≈æi datume za svaki ispit. Nastavnik ne mo≈æe da upi≈°e ocenu ukoliko ispit nije prijavljen.
+	-Prijava ispita - Evidentira studenta koji mo≈æe da pola≈æe ispit u ispitnom roku. Student mo≈æe da odjavi ispit. Prijava ne sme da se bri≈°e iz evidencije.
 
-Proöiriti primer sa REST API-jem za evidenciju studenata novim REST servisom koji omoguÊuje registrovanje novog korisnika. Za novog korisnika mora biti definisano koja prava pristupa ima. 
-Implementirati JWT-baziranu kontrolu pristupa. Kurseve treba da moûe da dodaje, menja i briöe samo administrator, dok su ostale funkcionalnosti dostupne obiËnom korisniku. Neautorizovani korisnik ima pravo samo da se uloguje.
+Upisivati gre≈°ke/izuzetke u eksterni log.txt fajl.
 
-Testirati funkcionalnost koriöÊenjem Postman alata.
+Pro≈°iriti primer sa REST API-jem za evidenciju studenata novim REST servisom koji omogu√¶uje registrovanje novog korisnika. Za novog korisnika mora biti definisano koja prava pristupa ima. 
+Implementirati JWT-baziranu kontrolu pristupa. Kurseve treba da mo≈æe da dodaje, menja i bri≈°e samo administrator, dok su ostale funkcionalnosti dostupne obi√®nom korisniku. Neautorizovani korisnik ima pravo samo da se uloguje.
+
+Testirati funkcionalnost kori≈°√¶enjem Postman alata.
