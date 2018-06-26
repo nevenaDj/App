@@ -9,33 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Exam {
+public class ApplyingExams {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	private Student student;
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-	private Subject subject;
+	private ExaminationPeriod examinationPeriod;
 
-	private Integer rating;
-
-	public Exam() {
-
-	}
-
-	public Exam(Integer id, Student student, Subject subject) {
-		super();
-		this.id = id;
-		this.student = student;
-		this.subject = subject;
-	}
-
-	public Exam(Student student, Subject subject) {
-		super();
-		this.student = student;
-		this.subject = subject;
-	}
+	private boolean flag;
 
 	public Integer getId() {
 		return id;
@@ -53,25 +37,20 @@ public class Exam {
 		this.student = student;
 	}
 
-	public Subject getSubject() {
-		return subject;
+	public ExaminationPeriod getExaminationPeriod() {
+		return examinationPeriod;
 	}
 
-	public void setSubject(Subject subject) {
-		this.subject = subject;
+	public void setExaminationPeriod(ExaminationPeriod examinationPeriod) {
+		this.examinationPeriod = examinationPeriod;
 	}
 
-	public Integer getRating() {
-		return rating;
+	public boolean isFlag() {
+		return flag;
 	}
 
-	public void setRating(Integer rating) {
-		this.rating = rating;
-	}
-
-	@Override
-	public String toString() {
-		return "Exam [id=" + id + ", student=" + student + ", subject=" + subject + "]";
+	public void setFlag(boolean flag) {
+		this.flag = flag;
 	}
 
 }

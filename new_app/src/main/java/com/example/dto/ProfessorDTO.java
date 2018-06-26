@@ -1,16 +1,11 @@
 package com.example.dto;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class StudentDTO {
-
+public class ProfessorDTO {
 	private Integer id;
-	private String idx;
 	private String firstName;
 	private String lastName;
 
-	private Set<ExamDTO> exams = new HashSet<>();
+	private DepartmanDTO departman;
 
 	public Integer getId() {
 		return id;
@@ -18,14 +13,6 @@ public class StudentDTO {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getIdx() {
-		return idx;
-	}
-
-	public void setIdx(String idx) {
-		this.idx = idx;
 	}
 
 	public String getFirstName() {
@@ -44,12 +31,12 @@ public class StudentDTO {
 		this.lastName = lastName;
 	}
 
-	public Set<ExamDTO> getExams() {
-		return exams;
+	public DepartmanDTO getDepartman() {
+		return departman;
 	}
 
-	public void setExams(Set<ExamDTO> exams) {
-		this.exams = exams;
+	public void setDepartman(DepartmanDTO departman) {
+		this.departman = departman;
 	}
 
 }

@@ -1,10 +1,11 @@
 package com.example.dto;
 
-public class ExamDTO {
+import java.util.Date;
+
+public class ExaminationPeriodDTO {
 	private Integer id;
-	private StudentDTO student;
 	private SubjectDTO subject;
-	private Integer rating;
+	private Date date;
 
 	public Integer getId() {
 		return id;
@@ -12,14 +13,6 @@ public class ExamDTO {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public StudentDTO getStudent() {
-		return student;
-	}
-
-	public void setStudent(StudentDTO student) {
-		this.student = student;
 	}
 
 	public SubjectDTO getSubject() {
@@ -30,12 +23,12 @@ public class ExamDTO {
 		this.subject = subject;
 	}
 
-	public Integer getRating() {
-		return rating;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setRating(Integer rating) {
-		this.rating = rating;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }

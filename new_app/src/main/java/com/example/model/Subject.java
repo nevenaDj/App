@@ -1,9 +1,12 @@
 package com.example.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Subject {
@@ -11,6 +14,11 @@ public class Subject {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	private Departman departman;
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	private Professor professor;
 
 	public Subject() {
 
@@ -41,6 +49,22 @@ public class Subject {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Departman getDepartman() {
+		return departman;
+	}
+
+	public void setDepartman(Departman departman) {
+		this.departman = departman;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 
 	@Override
