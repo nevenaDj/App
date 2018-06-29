@@ -7,7 +7,8 @@ import com.example.model.Role;
 public class UserDTO {
 	private Integer id;
 	private String username;
-	private String password;
+	private String firstName;
+	private String lastName;
 	List<Role> roles;
 
 	public Integer getId() {
@@ -26,12 +27,20 @@ public class UserDTO {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public List<Role> getRoles() {

@@ -15,7 +15,7 @@ public class ApplyingExams {
 	private Integer id;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
-	private Student student;
+	private User student;
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	private ExaminationPeriod examinationPeriod;
 
@@ -29,11 +29,11 @@ public class ApplyingExams {
 		this.id = id;
 	}
 
-	public Student getStudent() {
+	public User getStudent() {
 		return student;
 	}
 
-	public void setStudent(Student student) {
+	public void setStudent(User student) {
 		this.student = student;
 	}
 

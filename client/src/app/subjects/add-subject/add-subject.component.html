@@ -1,0 +1,44 @@
+<br><br><br><br><br><br>
+<form class="form-horizontal" name="form" (ngSubmit)="save()">
+  <fieldset>
+  
+  <!-- Form Name -->
+  <legend class="leg">Upis predmeta</legend>
+  <br>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Naziv</label>  
+    <div class="col-md-4">
+    <input type="text" class="form-control input-md" name="name" [(ngModel)]="subject.name" placeholder="Naziv predmeta" autofocus>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-md-4 control-label">Departman</label>
+    <div class="col-md-4">
+        <select class="form-control selectpicker" data-live-search="true" [(ngModel)]="departman" [ngModelOptions]="{standalone: true}" title="Departmani">
+            <option *ngFor="let c of departmans" [ngValue]="c">{{c.name}}</option>
+        </select>
+      </div>
+  </div> 
+
+  <div class="form-group">
+    <label class="col-md-4 control-label">Nastavnik</label>
+    <div class="col-md-4">
+        <select class="form-control selectpicker" data-live-search="true" [(ngModel)]="prof" [ngModelOptions]="{standalone: true}" title="Profesori">
+            <option *ngFor="let c of profs" [ngValue]="c">{{c.user.firstName + " " + c.user.lastName}}</option>
+        </select>
+      </div>
+  </div>
+  
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="btn_continuar"></label>
+    <div class="col-md-4">
+      <button type="submit" name="btn_continuar" class="btn btn-primary right">Upiši</button>
+    </div>
+  </div>
+  
+  </fieldset>
+  </form>

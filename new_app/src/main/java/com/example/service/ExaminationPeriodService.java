@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,10 @@ public class ExaminationPeriodService {
 
 	public ExaminationPeriod findOne(Integer id) {
 		return examinationPeriodRepository.getOne(id);
+	}
+
+	public List<ExaminationPeriod> findAll() {
+		return examinationPeriodRepository.findAll();
 	}
 
 }

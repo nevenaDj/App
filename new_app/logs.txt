@@ -1,0 +1,4 @@
+2018-06-29 08:56:36.549 ERROR 14632 --- [https-jsse-nio-8443-exec-7] com.example.controller.UserController    : Neispravno korisnicko ime ili lozinka.
+2018-06-29 09:52:40.549 ERROR 4328 --- [https-jsse-nio-8443-exec-1] com.example.controller.UserController    : Neispravno korisnicko ime ili lozinka.
+2018-06-29 09:53:37.121 ERROR 4328 --- [https-jsse-nio-8443-exec-1] com.example.controller.UserController    : Neispravno korisnicko ime ili lozinka.
+2018-06-29 11:15:37.465 ERROR 6776 --- [https-jsse-nio-8443-exec-8] com.example.controller.UserController    : Neispravno korisnicko ime ili lozinka.

@@ -24,6 +24,10 @@ public class User {
 	@Size(min = 8, message = "Minimum password length: 8 characters")
 	private String password;
 
+	private String firstName;
+
+	private String lastName;
+
 	@ElementCollection(fetch = FetchType.EAGER)
 	List<Role> roles;
 
@@ -53,6 +57,22 @@ public class User {
 
 	public List<Role> getRoles() {
 		return roles;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public void setRoles(List<Role> roles) {

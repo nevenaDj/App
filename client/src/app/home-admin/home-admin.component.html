@@ -1,0 +1,43 @@
+<!-- Start Header Area -->
+<header class="default-header">
+  <div class="container">
+    <div class="header-wrap">
+      <div class="header-top d-flex justify-content-between align-items-center q">
+        <div class="logo">
+          <a><img style="width: 50px; height: 50px;" src="../../assets/logo.png" alt=""></a>
+        </div>
+        <div class="main-menubar d-flex align-items-center">
+          <nav>
+            <ul class="nav navbar-nav f">
+            <li class="dropdown" dropdown [dropdownToggle]="true" >
+              <a  class="btn btn-secondary dropdown-toggle"  dropdown-open> Upis <span class="caret"></span></a>
+              <ul class="dropdown-menu" >
+                  <li class="dropdown-button"><a [routerLink]="['/admin/students/add']">Studenta</a></li>
+                  <li class="dropdown-item"><a [routerLink]="['/admin/departmans/add']">Departmana</a></li>
+                  <li class="dropdown-button"><a [routerLink]="['/admin/professors/add']">Nastavnika</a></li>
+                  <li class="dropdown-item"><a [routerLink]="['/admin/subjects/add']">Predmeta</a></li>
+                  <li class="dropdown-item"><a [routerLink]="['/admin/examinationPeriod/add']">Ispitnog roka</a></li>
+                  
+              </ul>
+            </li>
+            <li class="dropdown" dropdown [dropdownToggle]="true" >
+              <a  class="btn btn-secondary dropdown-toggle"  dropdown-open> Prikaz <span class="caret"></span></a>
+              <ul class="dropdown-menu" >
+                  <li class="dropdown-button"><a [routerLink]="['/admin/students']">Studenata</a></li>
+                  <li class="dropdown-item"><a [routerLink]="['/admin/professors']">Nastavnika</a></li>
+                  <li class="dropdown-item"><a [routerLink]="['/admin/departmans']">Departmana</a></li>
+              </ul>
+            </li>
+              <li><a [routerLink]="['/admin/password']">Promena lozinke</a></li>
+              <li><a (click) ="logout()">Odjava</a></li>
+            </ul>
+          </nav>
+          
+          <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<router-outlet></router-outlet>
+<!-- End Header Area -->

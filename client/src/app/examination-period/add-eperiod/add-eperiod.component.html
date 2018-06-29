@@ -1,0 +1,35 @@
+<br><br><br><br><br><br>
+<form class="form-horizontal" name="form" (ngSubmit)="save()">
+  <fieldset>
+  
+  <!-- Form Name -->
+  <legend class="leg">Upis predmeta</legend>
+  <br>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Datum</label>  
+    <div class="col-md-4">
+    <input type="text" class="form-control input-md" name="name" [(ngModel)]="date" placeholder="Datum" autofocus>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-md-4 control-label">Predmet</label>
+    <div class="col-md-4">
+        <select class="form-control selectpicker" data-live-search="true" [(ngModel)]="subject" [ngModelOptions]="{standalone: true}" title="Predmeti">
+            <option *ngFor="let c of subjects" [ngValue]="c">{{c.name}}</option>
+        </select>
+      </div>
+  </div> 
+  
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="btn_continuar"></label>
+    <div class="col-md-4">
+      <button type="submit" name="btn_continuar" class="btn btn-primary right">Upiši</button>
+    </div>
+  </div>
+  
+  </fieldset>
+  </form>

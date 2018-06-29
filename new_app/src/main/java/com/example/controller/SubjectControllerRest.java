@@ -91,4 +91,18 @@ public class SubjectControllerRest {
 		return new ResponseEntity<>(subjectDTOs, HttpStatus.OK);
 	}
 
+	@GetMapping("/subject")
+	//@PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_STUDENT')")
+	public ResponseEntity<List<SubjectDTO>> getAllSubjects() {
+		List<Subject> subjects = subjectService.getSubjects();
+
+		List<SubjectDTO> subjectDTOs = new ArrayList<>();
+		for (Subject subject : subjects) {
+			subjectDTOs.add(modelMapper.map(subject, SubjectDTO.class));
+
+		}
+
+		return new ResponseEntity<>(subjectDTOs, HttpStatus.OK);
+	}
+
 }

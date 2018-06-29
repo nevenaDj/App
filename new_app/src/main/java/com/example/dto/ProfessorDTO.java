@@ -2,9 +2,7 @@ package com.example.dto;
 
 public class ProfessorDTO {
 	private Integer id;
-	private String firstName;
-	private String lastName;
-
+	private UserDTO user;
 	private DepartmanDTO departman;
 
 	public Integer getId() {
@@ -15,20 +13,12 @@ public class ProfessorDTO {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public UserDTO getUser() {
+		return user;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setUser(UserDTO user) {
+		this.user = user;
 	}
 
 	public DepartmanDTO getDepartman() {

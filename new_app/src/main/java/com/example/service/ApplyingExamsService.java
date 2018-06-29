@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.model.ApplyingExams;
 import com.example.model.ExaminationPeriod;
-import com.example.model.Student;
+import com.example.model.User;
 import com.example.repository.ApplyingExamsRepository;
 
 @Service
@@ -13,7 +13,7 @@ public class ApplyingExamsService {
 	@Autowired
 	private ApplyingExamsRepository applyingExamsRepository;
 
-	public void addApplyingExamRepository(ExaminationPeriod examinationPeriod, Student student) {
+	public void addApplyingExamRepository(ExaminationPeriod examinationPeriod, User student) {
 		ApplyingExams applyingExams = new ApplyingExams();
 		applyingExams.setExaminationPeriod(examinationPeriod);
 		applyingExams.setStudent(student);

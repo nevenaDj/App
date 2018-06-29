@@ -1,0 +1,25 @@
+<br><br><br><br><br><br>
+<form class="form-horizontal" name="form" (ngSubmit)="save()">
+  <fieldset>
+  
+  <!-- Form Name -->
+  <legend class="leg">Upis departmana</legend>
+  <br>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Naziv</label>  
+    <div class="col-md-4">
+    <input type="text" class="form-control input-md" name="name" [(ngModel)]="departman.name" placeholder="Naziv departmana" autofocus>
+    </div>
+  </div>
+  
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="btn_continuar"></label>
+    <div class="col-md-4">
+      <button type="submit" name="btn_continuar" class="btn btn-primary right">Upiši</button>
+    </div>
+  </div>
+  
+  </fieldset>
+  </form>

@@ -1,10 +1,13 @@
 package com.example.service;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +48,25 @@ public class UserService {
 		} else {
 			throw new CustomException("Username is already in use", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
+	}
+
+	public User whoami(HttpServletRequest req) {
+		return userRepository.findByUsername(jwtTokenProvider.getUsername(jwtTokenProvider.resolveToken(req)));
+	}
+
+	public void changePassword(String currentPassword, String newPassword, String checkPassword,
+			HttpServletRequest req) {
+		User user = userRepository.findByUsername(jwtTokenProvider.getUsername(jwtTokenProvider.resolveToken(req)));
+		if (BCrypt.checkpw(currentPassword, user.getPassword()) && newPassword.equals(checkPassword)) {
+			user.setPassword(passwordEncoder.encode(newPassword));
+			userRepository.save(user);
+		} else {
+			throw new CustomException("Passwords are not same", HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+	}
+
+	public User findByUsername(String username) {
+		return userRepository.findByUsername(username);
 	}
 
 }

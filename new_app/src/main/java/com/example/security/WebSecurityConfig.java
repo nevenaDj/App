@@ -46,9 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// No session will be created or used by spring security
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-		http.authorizeRequests().antMatchers("/api/login").permitAll()
-			.antMatchers("/api/subject**").hasAuthority("ROLE_ADMIN")
-			.anyRequest().authenticated();
+		http.authorizeRequests().antMatchers("/", "/login", "/api/login").permitAll().anyRequest().authenticated();
 
 		// If a user try to access a resource without having enough permissions
 		http.exceptionHandling().accessDeniedPage("/api/login");
@@ -59,7 +57,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/webjars/**");
+		web.ignoring().antMatchers("/webjars/**")//
+				.antMatchers("/public")//
+				.antMatchers("/main**")//
+				.antMatchers("/inline**")//
+				.antMatchers("/polyfills**")//
+				.antMatchers("/styles**")//
+				.antMatchers("/favicon.ico")//
+				.antMatchers("/scripts**")//
+				.antMatchers("/glyphicons**")//
+				.antMatchers("/fontawesome**")//
+				.antMatchers("/vendor**")//
+				.antMatchers("/assets/1**")//
+				.antMatchers("/assets/logo**")//
+				.antMatchers("/Poppins**");
 	}
 
 	@Bean

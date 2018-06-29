@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.model.Departman;
@@ -60,6 +62,14 @@ public class SubjectService2 {
 
 		return subjects;
 
+	}
+
+	public List<Subject> getSubjects() {
+		return subjectRepository.findAll();
+	}
+
+	public Page<Subject> findAllPage(Pageable page) {
+		return subjectRepository.findAll(page);
 	}
 
 	static <K, V extends Comparable<? super V>> List<Entry<K, V>> entriesSortedByValues(Map<K, V> map) {

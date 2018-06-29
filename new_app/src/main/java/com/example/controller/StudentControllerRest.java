@@ -22,10 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.dto.ExamDTO;
 import com.example.dto.StudentDTO;
 import com.example.dto.SubjectDTO;
+import com.example.dto.UserDTO;
 import com.example.model.Exam;
 import com.example.model.Student;
+import com.example.model.User;
 import com.example.service.ExamService2;
 import com.example.service.StudentService2;
+import com.example.service.UserService;
 
 @RestController
 @RequestMapping("/api")
@@ -35,15 +38,20 @@ public class StudentControllerRest {
 	private StudentService2 studentService;
 
 	@Autowired
+	private UserService userService;
+
+	@Autowired
 	private ExamService2 examService;
 
 	@Autowired
 	private ModelMapper modelMapper;
 
 	@PostMapping("/student")
-	@PreAuthorize("hasRole('ROLE_USER')")
-	public ResponseEntity<Void> addStudent(@RequestBody StudentDTO student) {
-		studentService.addStudent(modelMapper.map(student, Student.class));
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public ResponseEntity<Void> addStudent(@RequestBody UserDTO student) {
+		User user = modelMapper.map(student, User.class);
+		user.setPassword("password");
+		userService.signup(user);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 
@@ -99,6 +107,19 @@ public class StudentControllerRest {
 
 		Double rating = examService.getStudentAvgRating(id, 5);
 		return new ResponseEntity<>(rating, HttpStatus.OK);
+	}
+
+	@GetMapping("/student")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public ResponseEntity<List<UserDTO>> getAllStudents() {
+		List<User> students = studentService.getAllStudents();
+
+		List<UserDTO> studentDTOs = new ArrayList<>();
+		for (User student : students) {
+			studentDTOs.add(modelMapper.map(student, UserDTO.class));
+		}
+
+		return new ResponseEntity<>(studentDTOs, HttpStatus.OK);
 	}
 
 }
